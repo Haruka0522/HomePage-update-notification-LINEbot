@@ -21,9 +21,14 @@ r = session.get("https://sasayama-jh.sasayama.jp/")
 
 latest_article = r.html.find("article")[0].text
 
-with open("./article_log.txt") as f:
-    past_article = f.read()
-with open("./article_log.txt", mode="w") as f:
+past_article = ""
+try:
+    with open("tmp/article_log.txt") as f:
+        past_article = f.read()
+except:
+    with open("tmp/article_log.txt","w"):
+        pass
+with open("tmp/article_log.txt", mode="w") as f:
     f.write(latest_article)
 if latest_article != past_article:
     PushMessage()
