@@ -1,6 +1,11 @@
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import TextSendMessage
+from linebot.models import (
+    FollowEvent, MessageEvent, TextMessage, TextSendMessage,\
+    ImageMessage, ImageSendMessage, TemplateSendMessage, ButtonsTemplate, \
+    PostbackTemplateAction, MessageTemplateAction, URITemplateAction
+    )
+import os
 from requests_html import HTMLSession
 import os
 
