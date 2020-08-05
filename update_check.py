@@ -14,7 +14,7 @@ def PushMessage():
         'Content-Type': 'application/json',
         'Authorization': Authorization,
     }
-    data = '{\n    "messages":[\n        {\n            "type":"text",\n            "text":"Update the homepage https://sasayama-jh.sasayama.jp/"\n        }\n    ]\n}'
+    data = '{\n    "messages":[\n        {\n            "type":"text",\n            "text":"The homepage has been updated. https://sasayama-jh.sasayama.jp/"\n        }\n    ]\n}'
     response = requests.post(
         'https://api.line.me/v2/bot/message/broadcast', headers=headers, data=data)
     return response
